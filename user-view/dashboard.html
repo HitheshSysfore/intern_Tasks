@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       body{
+        background-color: lightgray;
+       }
+       
+        .header{
+            display:flex;
+            align-items: center;
+            background-color: rgb(67,67,227) ;
+            justify-content: space-between;
+            height:70px;
+            padding: 15px;
+        }
+        
+        .header>div>p {
+            color:white;
+        }
+        .header>div>h3 {
+            color:white;
+        }
+        .navbar
+        {
+            background-color: rgb(4,4,213);
+            height:40px;
+            margin-bottom: 20px;
+            
+        }
+        .navbar ul{
+            padding:10px;
+            display:flex;
+            list-style: none;
+            
+            gap:20px;
+           
+        }
+        ul>li{
+            color:white;
+            
+        }
+        li:hover{
+            background-color: lightcoral;
+        }
+        .dashboard-items{
+            height: 200px;
+            display: flex;
+            gap:10px;
+            padding: 20px 10px 10px 10px;;
+        }
+        .dashboard-items .items{
+            background-color: red;
+            height:55%;
+            width:25%;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .content{
+            background-color: white;
+            height: 200px;  
+            display:flex;
+            gap:20px;
+            padding:20px;
+            margin:-40px 10px 20px 10px;
+        }
+        footer{
+            text-align: center;
+            background-color: white;
+            position:absolute;
+            bottom:0;
+            width:100%;
+            padding:20px;
+        }
+        #first{
+            background-color: lightblue;
+        }
+        #second{
+            background-color: lightgreen;
+        }
+        #Third{
+            background-color: lightcoral;
+        }
+        #fourth{
+            background-color: lightcoral;
+        }
+        
+        
+    </style>
+</head>
+<body>
+   
+    <div class="header-container">
+        <div class="header">
+           <img src="sysfore-logo-2020.svg" width="150px" height="60px">
+           <div class="user-detail">
+            <h3 id="user"> "</h3>
+            <p id="message">"</p>
+           </div>
+            
+        </div>
+        <div class="navbar">
+            <ul>
+                <li>DashBoard</li>
+                <li>Profile</li>
+                <li>Calender</li>
+                <li>Report</li>
+                <li>Settings</li>
+                <li>HelpCenter</li>
+                <li>Logout</li>
+            </ul>
+            
+        </div>
+    </div>
+   
+    <div class="dashboard-items">
+        <!--<div  id="first" class="items">
+            <h3>DashBoard Item1</h3>
+            <p>28</p>
+        </div>
+        <div  id="second" class="items">
+            <h3>DashBoard Item2</h3>
+            <p>45</p>
+        </div>
+        <div  id="Third" class="items">
+            <h3>DashBoard Item3</h3>
+            <p>46</p>
+        </div>
+        <div  id="fourth" class="items">
+            <h3>DashBoard Item4</h3>
+            <p>56</p>
+        </div>-->
+    </div>
+    <div class="content">
+        
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F210938.jpg&f=1&nofb=1&ipt=4bd8596379f5eaf273e142ce0ac3423755bb7ae940a9e54a12498a1e92d3bbcb&ipo=images" width="150px" height="150px">
+            <p >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro architecto magni placeat numquam. Fugit ullam placeat ea iure et sed autem molestiae dolor. Similique, dicta? Magnam quibusdam maiores explicabo aspernatur? Esse, dolor consectetur sit, nulla praesentium eligendi blanditiis quam sint saepe ipsum laudantium! Fugit voluptates suscipit voluptate praesentium mollitia expedita!</p>
+        
+    </div>
+    <footer>
+        <p>Copy right 2024</p>
+    </footer>
+    <script >
+       const dashboard=[{"title":"Dashboard item1",
+      "value":28},{
+        "title":"Dashboard item2",
+       "value":45
+    },{
+        "title":"Dashboard item3",
+       "value":46
+    },{
+        "title":"Dashboard item4",
+       "value":56
+    }]
+    const container=document.querySelector(".dashboard-items");
+    dashboard.forEach((item)=>{
+        const div=document.createElement("div");
+        div.classList.add("items");
+        const h3=document.createElement("h3");
+        const p=document.createElement("p");
+        div.appendChild(h3);
+        div.appendChild(p);
+        h3.textContent=item.title;
+        p.textContent=item.value;
+        container.appendChild(div);
+    })
+        const color=[{
+            "id":"first"
+
+        },{"id":"second"},{
+            "id":"third"
+        },{"id":"fourth"}]
+
+        color.forEach((item,index)=>
+        {
+            const div=document.querySelectorAll(".items");
+            const value= `${item.id}`
+            console.log(value);
+          div[index]=div[index].setAttribute('id', item.id);
+        })
+       
+       document.getElementById("user").textContent=localStorage.getItem("username");
+    </script>
+    </body>
+</body>
+</html>

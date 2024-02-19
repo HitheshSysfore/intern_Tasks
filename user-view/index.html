@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            background-color: lightgray;
+            display:flex;
+            flex-direction: column;
+            background-image: url(login-bg.jpg);
+            background-repeat: no-repeat;
+            background-size:cover;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-box{
+            background-color:white;
+            width:30%;
+            height:50%;
+            padding:20px 20px 20px 20px;
+            position:relative;
+           
+        }
+        .heading{
+            
+            margin-bottom: 20px;
+        }
+        .heading>h1{
+            margin-bottom: 10px;
+            margin-left:30px ;
+        }
+        .heading>p{
+            margin-left:30px;
+        }
+        .login-box label{
+           display: block;
+           font-weight: bold;
+           margin-left:30px;
+           
+          
+        }
+        .login-box input{
+          width:90%;
+          margin:10px 0px 40px 30px;
+          padding: 5px;
+          outline:none;
+          border:none;
+          border-bottom: 1px solid black;
+        }
+        .login-box button{
+            width:70%;
+            display: block;
+            position:absolute;
+            margin-top: 20px;
+            left:50px;
+            padding:10px;
+            background-color:green;
+            bottom: 20px;
+            border:none;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color:orange;
+            
+        }
+        button>a{
+            color:white;
+        }
+        button>a:hover{
+            color:white;
+        }
+      @media only screen and (max-width: 700px)and (min-width: 500px){
+            .login-box{
+                background-color: aquamarine;
+            }
+          
+      }
+      a{
+        text-decoration: none;
+      }
+      img{
+        margin-bottom:20px;
+      }
+    </style>
+</head>
+<body>
+    
+    
+    <div class="container">
+       
+        <img src="sysfore-logo-2020.svg" width="150px" height="60px">
+        <div class="login-box">
+         
+            <div class="heading">
+                <h1>Login</h1>
+                <p>Get Started With Account</p>
+            </div>
+            <form id="my-form">
+             
+            <label class="labels" for="Username">UserName</label>
+            <input id="username"type="text" placeholder="Enter your Name" name="Username">
+            <label class="labels" for="Username">Password</label>
+            <input type="password" id="password" placeholder="*******">
+            <button type="submit" >Login</button>
+            </form>
+        </div>
+    </div>
+  
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: lightgray;
+        }
+        .header{
+            display:flex;
+            align-items: center;
+            background-color: rgb(67,67,227) ;
+            justify-content: space-between;
+            height:70px;
+            padding: 15px;
+        }
+        .header  h3{
+            color: white;
+        }
+        .header p{
+            color:white;
+        }
+        .link-items{
+            display: flex;
+            gap: 20px;
+
+        }
+        .link-items p{
+            margin-top: 20px;
+        }
+        .nav{
+            background-color: white;
+            padding: 20px;
+        }
+        .details{
+            background-color: white;
+            height:55vh;
+            margin:15px 15px 15px 15px;
+        }
+        .form-container{
+           display:grid;
+           grid-template-columns: 25% 25% 25% 25%;
+           grid-template-rows: 25% 25% 25% 25%;
+            justify-content: space-evenly;
+           padding:20px;
+          
+          
+        }
+       .labels{
+        display:block;
+        margin-bottom:5px;
+        margin-left: 5px;
+        
+
+       }
+       label{
+        
+       }
+       input{
+       padding: 10px;
+       width:90%;
+       }
+       .items{
+       
+        margin:5px;
+        
+       }
+       
+       #comment{
+        display:block;
+        grid-column: 1 / span 3;
+       }
+       textarea{
+        width: 100%;
+        height:80%
+       }
+       #button{
+        grid-column: 4;
+        margin-bottom: -30px;
+        grid-row:4/ span 3;
+        display:flex;
+        justify-content: end;
+        flex-direction: row;
+        align-items: center;
+        gap:10px;
+       }
+button{
+    padding:10px;
+    width: 43%;
+}
+#submit{
+    background-color: orange;
+}
+   
+select{
+    margin-left:5px;
+    padding: 10px;
+       width:90%;
+}
+a{
+    text-decoration: none;
+    color:white;
+
+}
+footer{
+    
+background-color: white;
+position:absolute;
+bottom:0px;
+height:100px;
+width:100%;
+text-align: center;
+}
+footer>p{
+    margin-top: 10px;;
+}
+footer>p:hover{
+    cursor:pointer;
+}
+a:hover{
+    cursor:pointer;
+}
+
+.combo
+{
+    display:flex;
+    align-items: center;
+}
+        </style>
+</head>
+<body>
+    <div class="header">
+            <div class="link-items">
+                <img src="sysfore-logo-2020.svg" width="150px" height="60px">
+               <a href="dashboard.html"> <p>Dashboard</p></a>
+                <p>Profile</p>
+            </div>
+            <div class="user-details">
+                <div class="combo">
+                    <span><img src="user-icon.svg" width="20px" height="20px"></span>
+                    <h3 id="top-display">Hi, User</h3>
+                    
+                </div>
+               
+                <a href="index.html">Logout</a>
+            </div>
+
+    </div>
+    <div class="nav">
+        <h3>Profile Details</h3>
+        <p>Fill Your Details Below</p>
+
+    </div>
+    <div class="details">
+        <form  id="my-form"  class="form-container" action="">
+            <div class="items">
+                <label class="labels">Firstname</label>
+              <input class="items inputs" id="Firstname"type="text" placeholder="Enter your Name">
+            </div>
+
+             <div class="items">
+                <label class="labels">LastName</label>
+              <input class="items inputs" type="text" placeholder="Enter your LastName">
+             </div>
+             
+              <div class="items">
+              <label class="labels">MiddleName</label>
+              <input class="items inputs" type="text" placeholder="Enter your Name">
+              </div>
+
+              <div class="items"> 
+              <label class="labels">Date Of birth</label>
+              <input class="items inputs" type="date" required>
+              </div>
+
+              <div class="items">
+                <label class="labels">Email</label>
+              <input class="items inputs" type="Email" placeholder="Enter your Email" required>
+              </div>
+              
+              <div class="items">
+                <label class="labels">Phone</label>
+                <input class="items inputs" type="number" placeholder="Enter yourPhone" required>
+              </div>
+             
+              <div class="items">
+                <label class="labels">Gender</label>
+                <select class="inputs">
+                  <option>
+                      Male
+                  </option>
+                  <option>
+                      Female
+                  </option>
+                </select>
+              </div>
+
+
+             <div class="items">
+                <label class="labels">Blood</label>
+                <select class="inputs">
+                  <option>
+                      A
+                  </option>
+                  <option>
+                     Ab
+                  </option>
+                </select>
+             </div>
+             
+             <div class="items" id="comment">
+                <label class="labels">Comment</label>
+                <textarea class="inputs" cols="30" rows="10"></textarea>
+             </div>
+             
+             <div class="items" id="button">
+                <button type="reset">Cancel</button>
+                <button type="submit" id="submit">Submit</button>
+                
+             </div>
+
+
+        </form>
+    </div>
+    <footer>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corporis eligendi similique!</p>
+    </footer>
+    <script>
+        window.addEventListener('load',function(){
+            document.getElementById("top-display").textContent=localStorage.getItem("username");
+        })
+       let inputs=document.querySelectorAll(".inputs");
+       let fileds=[0,0];
+       for(let i=0;i<inputs.length;i++)
+       {
+        if(inputs[i].type==="text"||inputs[i].type==="textarea")
+        {
+
+              inputs[i].addEventListener('keyup',function(){
+            
+            fileds[i]=inputs[i].value;
+            console.log(fileds);
+
+        })
+        }
+        else if(inputs[i].type==="date"||inputs[i].type==="number"||inputs[i].type==="email"||inputs[i].tagName=="SELECT")
+        {
+            inputs[i].addEventListener('change',function(){
+            
+            fileds[i]=inputs[i].value;
+            console.log(fileds);
+
+        })
+        }
+        
+        }
+        document.getElementById('my-form').addEventListener('submit',function(e) {
+    e.preventDefault();
+        
+        localStorage.setItem('formdetails', JSON.stringify(fileds));
+        setTimeout(()=>
+        {
+            window.location.href="display.html"
+
+        },200)
+        // document.querySelector('form').setAttribute('action', 'dashboard.html');
+} );
+      
+       
+    </script>
+</body>
+</html>

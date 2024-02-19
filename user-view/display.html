@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: lightgray;
+        }
+        .header{
+            display:flex;
+            align-items: center;
+            background-color: rgb(67,67,227) ;
+            justify-content: space-between;
+            height:70px;
+            padding: 15px;
+        }
+        .link-items{
+            display: flex;
+            gap: 20px;
+            color:white;
+
+        }
+        .link-items p{
+            margin-top: 20px;
+            color:white;
+        }
+        .nav{
+            background-color: white;
+            padding: 20px;
+        }
+        .details{
+            background-color: white;
+            height:50vh;
+            margin:15px 15px 15px 15px;
+        }
+        .user-details
+        {
+            color:white;
+        }
+        .details{
+           display:grid;
+           row-gap: 20px;
+           grid-template-columns: 15% 15%;
+           grid-template-rows: 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+           padding: 20px;
+          
+        }
+       .labels{
+        margin-bottom:5px;
+       
+
+       }
+       input{
+        border:none;
+        border-bottom: 1px solid black;
+        width:55vw;
+       }
+      
+       a{
+        color:white;
+        text-decoration: none;
+       }
+        
+        </style>
+</head>
+<body>
+    <div class="header">
+        <div class="link-items">
+            <img src="sysfore-logo-2020.svg" width="150px" height="60px">
+            <p>Dashboard</p>
+            <p>Profile</p>
+        </div>
+        <div class="user-details">
+            <h3 id="top-display">Hi, User</h3>
+           <a href="index.html"><p>Logout</p></a> 
+        </div>
+
+</div>
+<div class="nav">
+    <h3>Profile Details</h3>
+    <p>Fill Your Details Below</p>
+
+</div>
+<div class="details">
+    
+      
+            <label class="labels">Firstname</label>
+          <input class="items" type="text" placeholder="Enter your Name">
+        
+
+            <label class="labels">LAstName</label>
+          <input class="items" type="text" placeholder="Enter your LastName">
+        
+         
+          
+          <label class="labels">MiddleName</label>
+          <input class="items" type="text" placeholder="Enter your Name">
+        
+
+          <label class="labels">Date Of birth</label>
+          <input class="items" type="calender" >
+          
+
+          
+            <label class="labels">Email</label>
+          <input class="items" type="Email" placeholder="Enter your Email">
+          
+          
+          
+            <label class="labels">Phone</label>
+            <input class="items" type="number" placeholder="Enter yourPhone">
+         
+         
+          
+            <label class="labels">Gender</label>
+            <input class="items" type="text" placeholder="Enter yourPhone">
+          
+
+
+         
+            <label class="labels">Blood</label>
+            <input class="items" type="text" placeholder="Enter yourPhone">
+         
+         
+            <label class="labels">Comment</label>
+            <input class="items" type="text" placeholder="Enter yourcomment">
+        
+</div>
+<script>
+     window.addEventListener('load',function(){
+            document.getElementById("top-display").textContent=localStorage.getItem("username");
+            let field = localStorage.getItem("formdetails"); 
+        if (field) {
+            field = JSON.parse(field); 
+            console.log(field[0]); 
+        }
+        document.querySelectorAll(".items").forEach((item,index)=>{
+            item.value=field[index];
+        });
+    });
+        
+</script>
+</body>
+</html>
