@@ -3,7 +3,11 @@ document.getElementById('username').addEventListener('keyup', function(e) {
      username = e.target.value;
     console.log(username);
 }
+
 );
+let hello=()=>{
+    console.log('hello')
+}
 const password=document.getElementById('password')
 
  document.getElementById('my-form').addEventListener('submit',function(e) {
